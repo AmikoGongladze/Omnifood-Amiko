@@ -1,0 +1,565 @@
+
+/*-------------------------*/
+/* BASIC SETUP */
+/*-------------------------*/
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    background-color: #fff;
+    font-family: 'Lato',Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+
+.clearfix{
+    zoom: 1;
+}
+
+.clearfix::after{
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+/*-------------------------*/
+/* REUSABLE COMPONENTS */
+/*-------------------------*/
+
+.row{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.box{
+    padding: 1%;
+}
+
+.myRow{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ------- HEADINGS ------ */
+
+h1,h2,h3{
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h1{
+    margin: 0;
+    color: #fff;
+    font-size: 240%;
+    word-spacing: 4px;
+    margin-bottom: 40px;
+}
+
+h2{
+   font-size: 180%;
+   word-spacing: 2px;
+   text-align: center;
+   margin-bottom: 30px;
+}
+
+h2:after{
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+    content: "  ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+h3{
+    font-size: 110%;
+    margin-bottom: 15px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+/* ------- PARAGRAPHS ------ */
+
+.long-copy{
+    line-height: 145%;
+    width: 70%;
+    margin-left: 15%;
+}
+
+.box p{
+    font-size: 90%;
+    line-height: 145%;
+}
+
+/* ------- SECTION ------ */
+
+section{
+    padding: 45px 0;
+}
+
+/* ------- ICONS ------ */
+
+.icon-big{
+    font-size: 300%;
+    display: block;
+    color: #e67e22;
+    margin: 10px;
+}
+
+.icon-small{
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    color: #e67e22;
+    font-size: 120%;
+    vertical-align: middle;
+    line-height: 120%;
+    margin-top: -4px;
+}
+
+/* ------- BUTTONS ------ */
+
+.btn:link,
+.btn:visited,
+input[type="submit"] {
+    display: inline-block;
+    border-radius: 200px;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: color 0.2s, background-color 0.2s, border 0.2s;
+}
+
+.btn-full:link,
+.btn-full:visited,
+input[type="submit"] {
+    background-color: #e67e22;
+    border: 1px solid #e67e22;
+    margin-right: 15px;
+}
+
+.btn-full:active,
+.btn-full:hover{
+    background-color: #cf6d17;
+    border: 1px solid #cf6d17;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited{
+    border: 1px solid #e67e22;
+    color: #e67e22;
+}
+
+.btn-ghost:active,
+.btn-ghost:hover{
+    background-color: #cf6d17;
+    color: #fff;
+}
+
+/* ------- LOGO ------ */
+
+.logo{
+    height: 100px;
+    width: auto;
+    margin-top: 20px;
+}
+
+.logo-black{
+    display: none;
+    width: auto;
+    height: 50px;
+    margin: 5px 0;
+}
+
+/* ------- MOBILE NAV ------ */
+
+.mobile-nav-icon{
+    display: none;
+    float: right;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.mobile-nav-icon{
+    font-size: 200%;
+    color: #fff;
+}
+
+/* ------- STICK NAV ------ */
+
+.stick{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 50;
+    box-shadow: 0 2px 2px #efefef;
+}
+
+.stick .main-nav{
+    margin-top: 18px;
+}
+
+.stick .main-nav li a:link,
+.stick .main-nav li a:visited{
+    padding: 15px 0;
+    color: #555;
+}
+
+.stick .logo {display: none;}
+.stick .logo-black {display: block;}
+
+/* ------------------------------------ */
+/* HEADER */
+/* ------------------------------------ */
+
+header{
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(img/hero.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.hero-text-box{
+    width: 1140px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.main-nav{
+    margin-top: 55px;
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited{
+    padding-bottom: 8px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    transition: border-bottom 0.4s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active{
+    border-bottom: 2px solid #e67e22;
+}
+
+/* ------------------------------------ */
+/* MEALS */
+/* ------------------------------------ */
+
+.section-meals{
+    padding: 0;
+}
+
+.meals-showcase{
+    width: 100%;
+    list-style: none;
+    padding: 0;
+}
+
+.meals-showcase li{
+    display: block;
+    float: left;
+    width: 25%;
+}
+
+.meal-photo{
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.meal-photo img{
+    opacity: 0.7;
+    width: 100%;
+    height: auto;
+    transform: scale(1.15);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.meal-photo img:hover{
+    transform: scale(1.03);
+    opacity: 1;
+}
+
+/* ------------------------------------ */
+/* HOW IT WORKS */
+/* ------------------------------------ */
+
+.steps-box{
+    margin-top: 30px;
+}
+
+.steps-box:first-child{
+    text-align: right;
+    padding-right: 3%;
+}
+
+.steps-box:last-child{
+    padding-left: 3%;
+}
+
+.app-screen{
+    width: 40%;
+}
+
+.works-steps div{
+    color: #e67e22;
+    border: 2px solid #e67e22;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 6px;
+    float: left;
+    font-size: 150%;
+    font-size: 150%;
+    margin-right: 10px;
+}
+
+.works-steps{
+    margin-top: 51px;
+}
+
+.btn-app img{
+    width: 150px;
+    height: auto;
+    margin-top: 20px;
+}
+
+.btn-ap img{
+    width: 132px;
+}
+
+.section-steps{
+    background-color: #f4f4f4;
+}
+
+/* ------------------------------------ */
+/* CITIES */
+/* ------------------------------------ */
+
+.box img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.box img:hover{
+    transform: scale(1.15);
+}
+
+.city-features{
+    display: flex;
+    align-items: center;
+}
+
+.city-features p{
+    font-size: 80%;
+    margin-left: 10px;
+}
+
+/* ------------------------------------ */
+/* TESTIMONIALS */
+/* ------------------------------------ */
+
+.section-testimonials{
+    background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),
+    url(img/back-customers.jpg);
+    background-size: cover;
+    color: #fff;
+    background-attachment: fixed;
+}
+
+blockquote{
+    padding: 1px;
+    font-style: italic;
+    line-height: 145%;
+    position: relative;
+}
+
+cite{
+    font-size: 90%;
+    margin-top: 25px;
+    display: block;
+}
+
+cite img{
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+blockquote::before{
+    content: "\201C";
+    font-size: 500%;
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: -20px;
+}
+
+/* ------------------------------------ */
+/* SIGN UP */
+/* ------------------------------------ */
+
+.section-plans{
+    background-color: #f4f4f4;
+}
+
+.plan-box{
+    background-color: #fff;
+    border-radius: 5px;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.plan-box div{
+    padding: 15px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.plan-price{
+    font-size: 300%;
+    margin-bottom: 10px;
+    font-weight: 100;
+    color: #e67e22;
+}
+
+.plan-price span{
+    font-size: 30%;
+    font-weight: 300;
+}
+
+.plan-price-meal{
+    font-size: 80%;
+}
+
+.plan-box ul{
+    list-style: none;
+}
+
+.plan-box ul li{
+    padding: 5px 0;
+}
+
+.plan-box div:first-child{
+    background-color: #e7e0e0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.plan-box div:last-child{
+    text-align: center;
+}
+
+/* ------------------------------------ */
+/* Form */
+/* ------------------------------------ */
+
+.contact-form{
+    width: 60%;
+    margin: 0 auto;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea{
+    width: 100%;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+textarea{
+    height: 100px;
+}
+
+input[type="checkbox"] {
+    margin: 10px 5px 10px 0;
+}
+
+*:focus{
+    outline: none;
+}
+
+/* ------------------------------------ */
+/* Footer */
+/* ------------------------------------ */
+
+footer{
+    background-color: #333;
+    padding-top: 60px;
+}
+
+.links{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-nav{
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons{
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+.footer-nav a, .social-icons a{
+    text-decoration: none;
+}
+
+.footer-nav a{
+    color: #fff;
+}
+
+footer p{
+    color: #fff;
+    text-align: center;
+    font-size: 90%;
+    padding-bottom: 20px;
+    margin-top: 25px;
+}
+
+/* Animation */
+.js--wp-1,
+.js--wp-2{
+    opacity: 0;
+}
+
+.js--wp-3{
+    animation-duration: 1s;
+}
+
+.js--wp-1 .animate__animated,
+.js--wp-2 .animate__animated{
+    opacity: 1;
+    animation-duration: 1s;
+}
